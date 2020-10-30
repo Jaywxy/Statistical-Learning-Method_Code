@@ -48,7 +48,7 @@ def NaiveBayes(Py, Px_y, x):
     :param Py: 先验概率分布
     :param Px_y: 条件概率分布
     :param x: 要估计的样本x
-    :return: 返回所有label的估计概率
+    :return: 返回待估计实例x的label
     '''
     #设置特征数目
     featrueNum = 784
@@ -69,7 +69,7 @@ def NaiveBayes(Py, Px_y, x):
         P[i] = sum + Py[i]
 
     #max(P)：找到概率最大值
-    #P.index(max(P))：找到该概率最大值对应的所有（索引值和标签值相等）
+    #P.index(max(P))：找到该概率最大值对应的索引（索引值和标签值相等）
     return P.index(max(P))
 
 
